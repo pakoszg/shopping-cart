@@ -52,7 +52,7 @@ const useAddToCart = () => {
         ...(restArray.length !== 0 ? restArray : []),
         {
           name: name,
-          price: matchedObj.price + price,
+          price: matchedObj.price,
           quantity: matchedObj.quantity + 1,
           id: matchedObj.id,
         },
@@ -63,15 +63,19 @@ const useAddToCart = () => {
   const changeQuantity = (name, value) => {
     const item = items.find((item) => item.name === name);
     const restArray = items.filter((item) => item.name !== name);
-    setItems([
-      ...(restArray.length !== 0 ? restArray : []),
-      {
-        name: name,
-        price: item.price,
-        quantity: value,
-        id: item.id,
-      },
-    ]);
+    if (value > 0) {
+      setItems([
+        ...(restArray.length !== 0 ? restArray : []),
+        {
+          name: name,
+          price: item.price,
+          quantity: value,
+          id: item.id,
+        },
+      ]);
+    } else {
+      setItems([...(restArray.length !== 0 ? restArray : [])]);
+    }
   };
 
   const deleteItem = (name) => {

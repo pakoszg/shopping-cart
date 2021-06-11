@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { decimalNumber } from "../utils";
 
 const WebshopItemSingle = ({ items, webshopItem, handleItems }) => {
   const { name, url, price } = webshopItem;
@@ -7,16 +8,23 @@ const WebshopItemSingle = ({ items, webshopItem, handleItems }) => {
   console.log(thisItem);
 
   return (
-    <div className="singleItem-wrapper">
+    <div className="single-item-wrapper">
       <h1>{name}</h1>
-      <img src={url} alt="" />
-      <h2>Price: ${price}</h2>
-      <h3>quantity:</h3>
-      {thisItem !== undefined && <h3>{thisItem.quantity}</h3>}
-      <button onClick={() => handleItems(price, name)}>Add to Cart</button>
-      <Link to="/webshop">
-        <button>Continue Shopping</button>
-      </Link>
+      <div className="single-item-properties">
+        <img src={url} alt="" />
+
+        <h2>Price: ${price ? decimalNumber(price) : null}</h2>
+        {thisItem !== undefined ? (
+          <h3>Quantity: {thisItem.quantity}</h3>
+        ) : (
+          <h3>Quantity: 0</h3>
+        )}
+
+        <button onClick={() => handleItems(price, name)}>Add to Cart</button>
+        <Link className="go-back" to="/webshop">
+          <button>Go Back</button>
+        </Link>
+      </div>
     </div>
   );
 };

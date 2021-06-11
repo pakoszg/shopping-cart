@@ -1,12 +1,14 @@
-import HomePage from "./components/HomePage/HomePage";
-import Webshop from "./components/Webshop/Webshop";
-import Navbar from "./components/Navbar/Navbar";
-import Cart from "./components/Cart/Cart";
+import HomePage from "./pages/HomePage";
+import Webshop from "./pages/Webshop";
+import Navbar from "./components/Navbar";
+import Cart from "./components/Cart";
 import useAddToCart from "./components/useAddToCart";
 import WebshopItemSingle from "./components/WebsopItemSingle";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { webshopItems } from "./assets/webshopItems";
+import "./Sass/App.scss";
+import PageNotFound from "pages/PageNotFound";
 
 function App() {
   const {
@@ -67,6 +69,9 @@ function App() {
               />
             )}
           />
+          <Route path="*">
+            <PageNotFound />
+          </Route>
         </Switch>
       </div>
     </Router>
