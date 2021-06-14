@@ -2,12 +2,15 @@ Shopping Cart Application
 
 <b>Made with React</b>
 
-learning from this project:
+practiced:
 
-- useState/useEffect hooks
+- webshop/cart core logic
+- useState/useEffect/useHistory hooks
 - React router - with dynamically generated routes
--
-- functional components
+- Dynamically created components from database
+- Working with objects
+- Functional components
 - Sass styling
-- component structure
-- passing down props w/o state management
+- React/FA icons and icon stacking
+- Component structure
+- Passing down props w/o state management
