@@ -4,6 +4,7 @@ Shopping Cart Application
 
 practiced:
 
+```
 - webshop/cart core logic
 - useState/useEffect/useHistory hooks
 - React router - with dynamically generated routes
@@ -14,3 +15,7 @@ practiced:
 - React/FA icons and icon stacking
 - Component structure
 - Passing down props w/o state management
+
+```
+
+Link to project: https://pakoszg.github.io/shopping-cart/
