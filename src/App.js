@@ -49,7 +49,7 @@ function App() {
           />
         ) : null}
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/shopping-cart">
             <HomePage />
           </Route>
           <Route exact path="/webshop">
